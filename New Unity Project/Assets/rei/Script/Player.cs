@@ -12,11 +12,11 @@ public class Player : MonoBehaviour
 
     public bool goalOn;
     public ParticleSystem explosion;
-    public Text failText;
+    //public Text failText;
     private Vector3 height;
 
-    Vector3 moveDirection;          //むく方向
-    public float moveTumSpeed = 10f;//プレイヤーの回頭スピード
+    //Vector3 moveDirection;          //むく方向
+   // public float moveTumSpeed = 10f;//プレイヤーの回頭スピード
 
 
 
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     {
         rB = GetComponent<Rigidbody>();
         goalOn = false;
-        failText.enabled = false;
+        //failText.enabled = false;
     }
 
 
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
         {
             explosion.transform.position = this.transform.position;
             this.gameObject.SetActive(false);
-            failText.enabled = true;
+            //failText.enabled = true;
             explosion.Play();
         }
 
@@ -89,14 +89,14 @@ public class Player : MonoBehaviour
             float x = Input.GetAxis("Horizontal");  //左右方向キー
             float z = Input.GetAxis("Vertical");       //上下方向キー
 
-            moveDirection = new Vector3(x * speed, 0, z * speed);
+           // moveDirection = new Vector3(x * speed, 0, z * speed);
 
-            if (moveDirection.magnitude > 0.01f && !(Input.GetKey(KeyCode.LeftShift)))
-            {
-                Quaternion moveRot = Quaternion.LookRotation(moveDirection);
-                transform.rotation = Quaternion.Slerp(transform.rotation, moveRot, Time.deltaTime * moveTumSpeed);
+            //if (moveDirection.magnitude > 0.01f && !(Input.GetKey(KeyCode.LeftShift)))
+            //{
+            //    Quaternion moveRot = Quaternion.LookRotation(moveDirection);
+            //    transform.rotation = Quaternion.Slerp(transform.rotation, moveRot, Time.deltaTime * moveTumSpeed);
 
-            }
+            //}
             rbVelo = rB.velocity;
             rB.AddForce(x * speed - rbVelo.x * brake, 0, z * speed - rbVelo.z * brake, ForceMode.Impulse);
         }
