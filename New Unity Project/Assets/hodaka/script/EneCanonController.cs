@@ -10,6 +10,7 @@ public class EneCanonController : MonoBehaviour
     public float speed = 30f;
     private bool ballFlg = true;
     private float frameCount = 0;
+    public float MaxFrameCount = 300;
 
     // Update is called once per frame
     void Update()
@@ -19,17 +20,10 @@ public class EneCanonController : MonoBehaviour
             EneCanonShot();
             ballFlg = false;
         }
-        if(frameCount++ >= 300)
+        if(frameCount++ >= MaxFrameCount)
         {
             ballFlg = true;
             frameCount = 0;
-        }
-    }
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Finish")
-        {
-            Destroy(gameObject, 0.2f);
         }
     }
 
