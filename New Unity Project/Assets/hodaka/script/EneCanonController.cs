@@ -8,7 +8,7 @@ public class EneCanonController : MonoBehaviour
     public GameObject muzzlePoint;
     public GameObject ball;
     public float speed = 30f;
-    private bool ballFlg = true;
+    private bool ballFlg = false;
     private float frameCount = 0;
     public float MaxFrameCount = 300;
 
@@ -30,8 +30,11 @@ public class EneCanonController : MonoBehaviour
     public void EneCanonShot()
     {
         Vector3 mballPos = muzzlePoint.transform.position;
-        GameObject newball = Instantiate(ball, mballPos, transform.rotation);
-        Vector3 dir = newball.transform.forward;
+        //Vector3 mballRot = new Vector3(-180,- 90,- 180);
+        GameObject newball = Instantiate(ball, mballPos,transform.rotation); //Quaternion.Euler(mballRot)
+        // Vector3 dir = newball.transform.forward;
+        //Vector3 dir = new Vector3(0,0,0);
+        Vector3 dir = newball.transform.right;
         newball.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
         newball.name = ball.name;
     }

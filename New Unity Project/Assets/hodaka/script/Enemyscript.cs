@@ -6,7 +6,7 @@ public class Enemyscript : MonoBehaviour
 {
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Finish")
+        if (other.gameObject.tag == "Finish" || other.gameObject.tag == "Player")
         {
             Destroy(gameObject, 0.2f);
         }
