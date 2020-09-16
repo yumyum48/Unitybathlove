@@ -66,7 +66,8 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             explosion.transform.position = this.transform.position;
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
             //failText.enabled = true;
             explosion.Play();
         }

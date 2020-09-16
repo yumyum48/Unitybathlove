@@ -13,6 +13,8 @@ public class TimerScript : MonoBehaviour
     public Text textGameOver;
     public Text textGameClear;
 
+    public GameObject Players;
+
     void Start()
     {
         textTimer = GameObject.Find("Timer").GetComponent<Text>();
@@ -20,10 +22,14 @@ public class TimerScript : MonoBehaviour
         textGameOver.enabled = false; //開始段階では存在を抹消する
         textGameClear.enabled = false;//同じく
     }
+
     void Update()
     {
-        TimeSeconds -= Time.deltaTime;
-        TIME = (int)TimeSeconds;
+        if (Players.transform.childCount != 0)
+        {
+            TimeSeconds -= Time.deltaTime;
+            TIME = (int)TimeSeconds;
+        }
         if (TimeSeconds <= 0.0f)
         {
             TimeSeconds = 0.0f;
@@ -31,9 +37,11 @@ public class TimerScript : MonoBehaviour
         }
         textTimer.text = "TIME : " + TIME.ToString();
         GameClearDrawing();
+        GameOverDrawing();
 
 
     }
+
     public void GameClearDrawing() {
         if (TimeEndFlg == true)
         {
@@ -41,6 +49,18 @@ public class TimerScript : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 1")) //マウス左クリック、Aボタン
             {
                 SceneManager.LoadScene("Title");//some_senseiシーンをロードする
+            }
+        }
+    }
+    public void GameOverDrawing()
+    {
+        //プレイヤーの処理
+        if (Players.transform.childCount == 0)
+        {
+            textGameOver.enabled = true;
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 1")) //マウス左クリック、Aボタン
+            {
+                SceneManager.LoadScene("Title");//玉本をロードする
             }
         }
     }

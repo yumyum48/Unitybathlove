@@ -175,6 +175,7 @@ MonoBehaviour:
   TimeEndFlg: 0
   textGameOver: {fileID: 2118793904}
   textGameClear: {fileID: 1562512809}
+  Players: {fileID: 1581620327}
 --- !u!114 &25632075
 MonoBehaviour:
   m_ObjectHideFlags: 0
