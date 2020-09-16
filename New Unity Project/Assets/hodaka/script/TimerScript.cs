@@ -30,11 +30,11 @@ public class TimerScript : MonoBehaviour
             TimeEndFlg = true;
         }
         textTimer.text = "TIME : " + TIME.ToString();
-        GameOverDrawing();
+        GameClearDrawing();
 
 
     }
-    public void GameOverDrawing() {
+    public void GameClearDrawing() {
         if (TimeEndFlg == true)
         {
             textGameClear.enabled = true;
