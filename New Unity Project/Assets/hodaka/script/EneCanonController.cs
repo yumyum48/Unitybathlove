@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EneCanonController : MonoBehaviour
 {
+    public TimerScript timeFlg;
     public GameObject muzzlePoint;
     public GameObject ball;
     public float speed = 30f;
@@ -29,14 +30,17 @@ public class EneCanonController : MonoBehaviour
 
     public void EneCanonShot()
     {
-        Vector3 mballPos = muzzlePoint.transform.position;
-        //Vector3 mballRot = new Vector3(-180,- 90,- 180);
-        GameObject newball = Instantiate(ball, mballPos,transform.rotation); //Quaternion.Euler(mballRot)
-        // Vector3 dir = newball.transform.forward;
-        //Vector3 dir = new Vector3(0,0,0);
-        Vector3 dir = newball.transform.right;
-        newball.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
-        newball.name = ball.name;
+        if (timeFlg.TimeEndFlg == false)
+        {
+            Vector3 mballPos = muzzlePoint.transform.position;
+            //Vector3 mballRot = new Vector3(-180,- 90,- 180);
+            GameObject newball = Instantiate(ball, mballPos, transform.rotation); //Quaternion.Euler(mballRot)
+                                                                                  // Vector3 dir = newball.transform.forward;
+                                                                                  //Vector3 dir = new Vector3(0,0,0);
+            Vector3 dir = newball.transform.right;
+            newball.GetComponent<Rigidbody>().AddForce(dir * speed, ForceMode.Impulse);
+            newball.name = ball.name;
+        }
     }
 
 }

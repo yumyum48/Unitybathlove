@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -37,6 +38,10 @@ public class TimerScript : MonoBehaviour
         if (TimeEndFlg == true)
         {
             textGameClear.enabled = true;
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 1")) //マウス左クリック、Aボタン
+            {
+                SceneManager.LoadScene("Title");//some_senseiシーンをロードする
+            }
         }
     }
 }

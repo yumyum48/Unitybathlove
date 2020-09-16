@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bd7606abb3d7d40920f19bf3aac26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeSeconds: 5
+  TimeSeconds: 30
   TimeEndFlg: 0
   textGameOver: {fileID: 2118793904}
   textGameClear: {fileID: 1562512809}
@@ -670,6 +670,11 @@ PrefabInstance:
       propertyPath: MaxFrameCount
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 6625015534180919057, guid: bf2e31c0cb564a245b2b7ced1bd6c48f,
+        type: 3}
+      propertyPath: timeFlg
+      value: 
+      objectReference: {fileID: 25632074}
     - target: {fileID: 6625015534180919058, guid: bf2e31c0cb564a245b2b7ced1bd6c48f,
         type: 3}
       propertyPath: m_Enabled
@@ -1200,6 +1205,11 @@ PrefabInstance:
       propertyPath: MaxFrameCount
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 6625015534180919057, guid: bf2e31c0cb564a245b2b7ced1bd6c48f,
+        type: 3}
+      propertyPath: timeFlg
+      value: 
+      objectReference: {fileID: 25632074}
     - target: {fileID: 6625015534180919058, guid: bf2e31c0cb564a245b2b7ced1bd6c48f,
         type: 3}
       propertyPath: m_Enabled
@@ -1477,7 +1487,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 41ac0735bc1beee4db88c35b55fd1d73, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.07
+  m_Volume: 0.512
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1930,6 +1940,11 @@ PrefabInstance:
       propertyPath: MaxFrameCount
       value: 800
       objectReference: {fileID: 0}
+    - target: {fileID: 6625015534180919057, guid: bf2e31c0cb564a245b2b7ced1bd6c48f,
+        type: 3}
+      propertyPath: timeFlg
+      value: 
+      objectReference: {fileID: 25632074}
     - target: {fileID: 6625015534180919058, guid: bf2e31c0cb564a245b2b7ced1bd6c48f,
         type: 3}
       propertyPath: m_Enabled
@@ -2245,7 +2260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAMECLEAR
+  m_Text: GAMECLEAR -B Push-
 --- !u!222 &1562512810
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2617,7 +2632,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAMEOVER
+  m_Text: GAMEOVER -B Push-
 --- !u!222 &2118793905
 CanvasRenderer:
   m_ObjectHideFlags: 0
