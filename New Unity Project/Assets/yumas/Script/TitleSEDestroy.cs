@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;  // シーンマネジメントの追加
 
-public class SceneChange : MonoBehaviour
+public class TitleSEDestroy : MonoBehaviour
 {
+
+    GameObject titleSe = GameObject.Find("TachSE");
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,11 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 1")) //マウス左クリック、Aボタン
         {
-            SceneManager.LoadScene("GameMain");//some_senseiシーンをロードする
+            // タイトル決定オンのオブジェクトを破棄
+            Destroy(titleSe, 0.2f);
         }
     }
 }
